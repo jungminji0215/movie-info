@@ -4,21 +4,64 @@
   padding: 0;
 }
 
+/* 
+html,
+body {
+  height: 100%;
+} */
+
 body {
   margin: 0;
 }
 
 .container {
   background-color: black;
-  /* width: 100vw; */
-  height: 100vh;
+
+  /* height: 100vh; */
   color: white;
 }
 
+/* header 영역 */
 .header {
-  border-bottom: 2px solid gray;
+  border-bottom: 1px solid gray;
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
 }
 
 .logo {
   color: red;
+}
+
+/* main 영역 */
+.main {
+  height: 950px;
+}
+
+.movie-items {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.movie-item {
+  background-color: green;
+  margin: 20px;
+  padding: 10px;
+}
+
+.movie-desc {
+  margin: 20px;
+}
+
+.movie-image {
+  width: 80%;
+}
+
+/* footer */
+.footer {
+  border-top: 1px solid gray;
+
+  height: 80px;
 }
