@@ -4,25 +4,13 @@
   padding: 0;
 }
 
-/* 
-html,
 body {
-  height: 100%;
-} */
-
-body {
-  margin: 0;
-}
-
-.container {
   background-color: black;
-
-  /* height: 100vh; */
   color: white;
 }
 
 /* header 영역 */
-.header {
+header {
   border-bottom: 1px solid gray;
   display: flex;
   justify-content: space-between;
@@ -34,34 +22,26 @@ body {
 }
 
 /* main 영역 */
-.main {
-  height: 950px;
+.card-view {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* text-align: center; */
 }
 
-.movie-items {
-  padding: 30px;
-  display: flex;
-  justify-content: center;
-  text-align: center;
+/* 그리드 공부 */
+.item-list {
+  display: grid;
+  /* margin: 48px 0; */
+  grid-template-columns: repeat(4, 200px);
+  /* grid-column-gap: 160px; */
+  /* grid-row-gap: 48px; */
 }
 
-.movie-item {
+.item-card {
   background-color: green;
-  margin: 20px;
-  padding: 10px;
-}
-
-.movie-desc {
   margin: 20px;
 }
 
 .movie-image {
   width: 80%;
-}
-
-/* footer */
-.footer {
-  border-top: 1px solid gray;
-
-  height: 80px;
 }
