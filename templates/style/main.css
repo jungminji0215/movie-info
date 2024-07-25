@@ -1,23 +1,31 @@
 .card-view {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* text-align: center; */
+  display: flex;
+  justify-content: center;
 }
 
 /* 그리드 공부 */
 .item-list {
   display: grid;
-  /* margin: 48px 0; */
-  grid-template-columns: repeat(4, 200px);
-  /* grid-column-gap: 160px; */
-  /* grid-row-gap: 48px; */
+  margin: 48px 0;
+  grid-template-columns: repeat(4, 300px);
+  grid-column-gap: 80px;
+  grid-row-gap: 48px;
 }
 
 .item-card {
-  background-color: green;
-  margin: 20px;
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  text-align: center;
+}
+.item-card img,
+h3,
+p {
+  margin-bottom: 4px;
 }
 
 .movie-image {
-  width: 80%;
+  width: 90%;
 }

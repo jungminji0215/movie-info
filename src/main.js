@@ -30,11 +30,9 @@ document.getElementById("search-button").addEventListener("click", () => {
  * 카드 생성
  */
 function createMovieCard(movie) {
-  // 새로운 HTML 요소를 생성
   const card = document.createElement("div");
   card.className = "item-card";
 
-  // 동적으로 생성한 요소의 내부 HTML 콘텐츠를 설정할 수 있다.
   card.innerHTML = `
     <img class="movie-image" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
     <h3>${movie.title}</h3>
