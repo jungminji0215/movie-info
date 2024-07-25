@@ -16,9 +16,11 @@ h-30 이런식으로 클래스를 추가해주는게 나은가?
 header input,
 button {
   height: 30px;
-  width: 40px;
+  width: 50px;
+  font-size: large;
 }
 
 header input {
   width: 200px;
+  padding-left: 10px;
 }
