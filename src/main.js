@@ -8,6 +8,17 @@ const options = {
   },
 };
 
+/**
+ * 페이지 로드 시 input 자동 커서
+ */
+document.addEventListener("DOMContentLoaded", function () {
+  var input = document.getElementById("search-input");
+  input.focus();
+});
+
+/**
+ * 검색
+ */
 const searchMovie = () => {
   const query = document.getElementById("search-input").value.toLowerCase();
   const movieCards = document.querySelectorAll(".item-card");
@@ -31,39 +42,38 @@ document.getElementById("search-input").addEventListener("keydown", (event) => {
 });
 
 /**
- * 카드 생성
+ * 카드 한 개 생성
  */
 const createMovieCard = (movie) => {
   const card = document.createElement("div");
   card.className = "item-card";
-
   card.innerHTML = `
     <img class="movie-image" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
     <h3>${movie.title}</h3>
     <p>${movie.overview}</p>
-    <span>Rating: ${movie.vote_average}</span>
+    <span>평점: ${movie.vote_average}</span>
   `;
+
   card.addEventListener("click", () => alert(`Movie ID: ${movie.id}`));
   return card;
 };
 
-const getMovieInfo = async () => {
-  const response = await fetch(
+/**
+ * 영화 조회
+ */
+const getMovieInfo = () => {
+  fetch(
     "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
     options
-  );
-
-  let result = await response.json();
-
-  // 실제 영화 정보
-  let movies = await result.results;
-
-  const movieContainer = document.getElementById("item-container");
-
-  movies.forEach((movie) => {
-    const card = createMovieCard(movie);
-    movieContainer.appendChild(card);
-  });
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      const movies = data.results;
+      const cardContainer = document.getElementById("item-container");
+      movies.forEach((movie) => {
+        cardContainer.appendChild(createMovieCard(movie));
+      });
+    });
 };
 
 getMovieInfo();
