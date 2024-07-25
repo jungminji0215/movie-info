@@ -1,5 +1,7 @@
 import { config } from "../utils/config.js";
 
+let page = 0;
+
 const options = {
   method: "GET",
   headers: {
@@ -7,6 +9,28 @@ const options = {
     Authorization: `Bearer ${config.token}`,
   },
 };
+
+const closeModal = (e) => {
+  if (e.target === document.querySelector(".modal-container")) {
+    document.querySelector(".modal-container").classList.remove("show-modal");
+  }
+};
+
+/**
+ * 스크롤 페이징
+ */
+window.addEventListener("scroll", function () {
+  const scroll = window.scrollY + window.innerHeight;
+  const scrollHeight = document.documentElement.scrollHeight;
+
+  console.log(scroll);
+  console.log(scrollHeight);
+
+  // 함수 빼기
+  if (scroll === scrollHeight) {
+    getMovieInfo();
+  }
+});
 
 /**
  * 페이지 로드 시 input 자동 커서
@@ -50,11 +74,30 @@ const createMovieCard = (movie) => {
   card.innerHTML = `
     <img class="movie-image" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
     <h3>${movie.title}</h3>
-    <p>${movie.overview}</p>
     <span>평점: ${movie.vote_average}</span>
   `;
 
-  card.addEventListener("click", () => alert(`Movie ID: ${movie.id}`));
+  card.addEventListener("click", () => {
+    const modal = document.createElement("div");
+    modal.className = "modal-container";
+    modal.innerHTML = `
+    <div class="item-modal">
+      <span>Movie ID :  ${movie.id}</span>
+      <p>${movie.overview}</p>
+   </div>
+    `;
+
+    modal.classList.add("show-modal");
+    const cardContainer = document.getElementById("container");
+    cardContainer.insertBefore(modal, cardContainer.firstChild);
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === document.querySelector(".modal-container")) {
+        modal.classList.remove("show-modal");
+      }
+    });
+  });
+
   return card;
 };
 
@@ -62,8 +105,9 @@ const createMovieCard = (movie) => {
  * 영화 조회
  */
 const getMovieInfo = () => {
+  page += 1;
   fetch(
-    "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
+    `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${page}`,
     options
   )
     .then((response) => response.json())
