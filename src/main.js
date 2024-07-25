@@ -8,12 +8,9 @@ const options = {
   },
 };
 
-document.getElementById("search-button").addEventListener("click", () => {
+const searchMovie = () => {
   const query = document.getElementById("search-input").value.toLowerCase();
-  console.log(query);
   const movieCards = document.querySelectorAll(".item-card");
-
-  console.log(movieCards);
 
   movieCards.forEach((card) => {
     const title = card.querySelector("h3").textContent.toLowerCase();
@@ -24,12 +21,19 @@ document.getElementById("search-button").addEventListener("click", () => {
       card.style.display = "none";
     }
   });
+};
+
+document.getElementById("search-button").addEventListener("click", searchMovie);
+document.getElementById("search-input").addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    searchMovie();
+  }
 });
 
 /**
  * 카드 생성
  */
-function createMovieCard(movie) {
+const createMovieCard = (movie) => {
   const card = document.createElement("div");
   card.className = "item-card";
 
@@ -41,7 +45,7 @@ function createMovieCard(movie) {
   `;
   card.addEventListener("click", () => alert(`Movie ID: ${movie.id}`));
   return card;
-}
+};
 
 const getMovieInfo = async () => {
   const response = await fetch(
@@ -54,7 +58,6 @@ const getMovieInfo = async () => {
   // 실제 영화 정보
   let movies = await result.results;
 
-  // 가져온 영화 정보를 붙일 html 가져오기
   const movieContainer = document.getElementById("item-container");
 
   movies.forEach((movie) => {
