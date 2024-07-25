@@ -1,0 +1,24 @@
+header {
+  border-bottom: 1px solid gray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.logo {
+  color: red;
+}
+
+/* 공통적인 부분을 어떻게 하면 줄일 수 있을까?
+h-30 이런식으로 클래스를 추가해주는게 나은가?
+ */
+header input,
+button {
+  height: 30px;
+  width: 40px;
+}
+
+header input {
+  width: 200px;
+}

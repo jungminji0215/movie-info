@@ -5,17 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style/common.css" />
+    <link rel="stylesheet" href="./style/header.css" />
+    <link rel="stylesheet" href="./style/main.css" />
   </head>
   <body>
-    <div id="app">
-      <header>
+    <div>
+      <header class="p-20">
         <h1 class="logo">내배캠 인기 영화</h1>
         <div>
           <input type="text" id="search-input" />
           <button id="search-button">검색</button>
         </div>
       </header>
+
       <main>
         <section class="card-view">
           <div class="item-list" id="item-container"></div>
