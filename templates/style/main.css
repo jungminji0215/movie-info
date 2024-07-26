@@ -3,7 +3,6 @@
   justify-content: center;
 }
 
-/* 그리드 공부 */
 .item-list {
   display: grid;
   margin: 48px 0;
@@ -34,9 +33,14 @@
 }
 
 .item-card img,
-h3,
-p {
+h3 {
   margin-bottom: 4px;
+  font-size: 22px;
+}
+
+.item-card span {
+  /* margin-bottom: 4px; */
+  font-size: 22px;
 }
 
 .movie-image {
