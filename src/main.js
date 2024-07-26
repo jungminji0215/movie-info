@@ -10,24 +10,16 @@ const options = {
   },
 };
 
-const closeModal = (e) => {
-  if (e.target === document.querySelector(".modal-container")) {
-    document.querySelector(".modal-container").classList.remove("show-modal");
-  }
-};
-
 /**
- * 스크롤 페이징
+ * 무한 스크롤
  */
 window.addEventListener("scroll", function () {
-  const scroll = window.scrollY + window.innerHeight;
+  const myScroll = window.scrollY + this.window.innerHeight;
   const scrollHeight = document.documentElement.scrollHeight;
 
-  console.log(scroll);
-  console.log(scrollHeight);
+  console.log(`myScroll = ${myScroll} scrollHeight = ${scrollHeight}`);
 
-  // 함수 빼기
-  if (scroll === scrollHeight) {
+  if (myScroll + 10 >= scrollHeight) {
     getMovieInfo();
   }
 });
@@ -77,6 +69,9 @@ const createMovieCard = (movie) => {
     <span>평점: ${movie.vote_average}</span>
   `;
 
+  /**
+   * 카드 클릭 시 모달
+   */
   card.addEventListener("click", () => {
     const modal = document.createElement("div");
     modal.className = "modal-container";
