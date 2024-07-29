@@ -1,12 +1,11 @@
-import { config } from "../utils/config.js";
-
 let page = 0;
 
 const options = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization: `Bearer ${config.token}`,
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MzIwNmQ4ODg3ZWQ0ZjE4ZWEwNDQ0ZmI5MDY1OGI0ZSIsIm5iZiI6MTcyMTc1OTY4NC45Nzc3MzgsInN1YiI6IjY2NGNkMjUyOGVlN2Y4MWUyZDkzMWJlNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Bit_BfYDcX4uaWb9vmFwPw9w2f0k92KPL5UR_aNY4fg",
   },
 };
 
