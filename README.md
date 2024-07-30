@@ -2,13 +2,13 @@
 
 ## 사용기술
 
-<img src="https://img.shields.io/badge/Javascript-F7DF1E?style=flat-square&logo=Javascript&logoColor=white"/>
+<div style="display: flex; gap: 10px;">
+  <img src="https://img.shields.io/badge/Javascript-F7DF1E?style=flat-square&logo=Javascript&logoColor=white"/>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/>
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/>
+</div>
 
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/>
-
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/>
-
-## 프로젝트 URL
+## 배포 링크
 
 https://minjimovie.netlify.app
 
@@ -30,7 +30,7 @@ https://minjimovie.netlify.app
 - [x] 영화정보 카드 리스트 기능 및 UI 구현
 - [x] 영화 검색 기능 및 UI 구현
 
-### 선택구현사항
+### 선택구현기능
 
 - [x] CSS flex, grid 사용하기
 - [x] 웹사이트 랜딩 또는 새로고침 후 검색 입력란에 커서 자동 위치시키기
