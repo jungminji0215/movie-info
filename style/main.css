@@ -73,3 +73,15 @@ h3 {
 .show-modal {
   display: block;
 }
+
+@media (max-width: 1200px) {
+  .item-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .item-list {
+    grid-template-columns: 3fr;
+  }
+}

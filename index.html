@@ -5,27 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./style/reset.css" />
     <link rel="stylesheet" href="./style/common.css" />
     <link rel="stylesheet" href="./style/header.css" />
     <link rel="stylesheet" href="./style/main.css" />
+    <script src="src/main.js" type="module"></script>
   </head>
   <body>
     <div class="container" id="container">
-      <div></div>
-      <header class="p-20">
+      <header>
         <h1 class="logo">영화 정보</h1>
-        <div>
+        <form id="search-form">
           <input type="text" placeholder="검색" id="search-input" />
           <button id="search-button">검색</button>
-        </div>
+        </form>
       </header>
 
       <main>
         <section class="card-view">
-          <div class="item-list" id="item-container"></div>
+          <ul class="item-list" id="item-container"></ul>
         </section>
       </main>
     </div>
-    <script type="module" src="../src/main.js"></script>
   </body>
 </html>
