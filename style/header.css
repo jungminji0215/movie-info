@@ -1,7 +1,7 @@
 header {
   border-bottom: 1px solid gray;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   height: 80px;
   padding: 20px;
@@ -9,6 +9,7 @@ header {
 
 .logo {
   color: red;
+  font-size: 30px;
 }
 
 header input,

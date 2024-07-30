@@ -50,7 +50,7 @@ const createMovieCard = (movie) => {
     `;
 
     modal.classList.add("show-modal");
-    const cardContainer = document.getElementById("container");
+    const cardContainer = document.querySelector(".container");
     cardContainer.insertBefore(modal, cardContainer.firstChild);
 
     modal.addEventListener("click", (e) => {
